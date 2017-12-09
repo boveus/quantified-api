@@ -1,0 +1,14 @@
+{
+  "name": "quantified-api",
+  "version": "1.0.0",
+  "description": "API for our quantified self app",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "author": "AABS",
+  "license": "ISC"
+}

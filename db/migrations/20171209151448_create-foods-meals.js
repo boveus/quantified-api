@@ -9,10 +9,10 @@ exports.up = function(knex, Promise) {
       table.string('name');
       table.integer('calories');
     }),
-    knex.schema.createTable('mealfood', (table) => {
+    knex.schema.createTable('mealfoods', (table) => {
       table.increments('id').primary();
-      table.integer('food_id').unsigned().references('foods.id');
-      table.integer('meal_id').unsigned().references('meals.id');
+      table.integer('food_id').unsigned().references('id').inTable('foods');
+      table.integer('meal_id').unsigned().index().references('id').inTable('meals');
       })
     ])
 }

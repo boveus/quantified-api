@@ -1,5 +1,6 @@
 var express = require('express')
 var app = express()
+app.use(allowCrossDomain)
 var bodyParser = require('body-parser')
 
 const environment = process.env.NODE_ENV || 'development'

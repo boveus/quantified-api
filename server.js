@@ -10,32 +10,22 @@ app.use(function(req, res, next) {
   next();
 });
 
-const environment = process.env.NODE_ENV || 'development'
-const configuration = require('./knexfile')[environment]
-const database = require('knex')(configuration)
-
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
 app.set('port', process.env.PORT || 3000)
 app.locals.title = 'Quantified Self API'
 
-
+// root page
 app.get('/', function(request, response) {
   response.send(app.locals.title)
 })
 
 // foods index (all foods)
-// app.get('/api/v1/foods', function(request, response) { 
-//   Food.index(response) 
-// })
 app.get('/api/v1/foods', Foods.index)
 
 // foods show (individual food)
-app.get('/api/v1/foods/:id', function(request, response) {
-  var id = request.params.id
-  Food.show(response, id)
-})
+app.get('/api/v1/foods/:id', Foods.show)
 
 if (!module.parent) {
   app.listen(app.get('port'), function() {

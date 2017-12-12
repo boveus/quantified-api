@@ -2,6 +2,8 @@ var express = require('express')
 var app = express()
 var bodyParser = require('body-parser')
 
+const Food = require('./lib/models/food')
+
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -23,12 +25,7 @@ app.get('/', function(request, response) {
   response.send(app.locals.title)
 })
 
-app.get('/api/v1/foods', function(request, response) {
-  database.raw('SELECT * FROM foods')
-    .then((data) => {
-      response.json( data.rows )
-    })
-})
+app.get('/api/v1/foods', function(request, response) { Food.index(response) } )
 
 app.get('/api/v1/foods/:id', function(request, response) {
   database.raw('SELECT * FROM foods WHERE id = (?)', [request.params.id])

@@ -27,6 +27,9 @@ app.get('/api/v1/foods', Foods.index)
 // foods show (individual food)
 app.get('/api/v1/foods/:id', Foods.show)
 
+// foods create
+app.post('/api/v1/foods', Foods.create)
+
 if (!module.parent) {
   app.listen(app.get('port'), function() {
     console.log(`${app.locals.title} is running on ${app.get('port')}.`);

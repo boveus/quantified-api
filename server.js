@@ -3,6 +3,7 @@ var app = express()
 var bodyParser = require('body-parser')
 
 const Foods = require('./lib/controllers/foods')
+const Meals = require('./lib/controllers/meals')
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -32,6 +33,9 @@ app.post('/api/v1/foods', Foods.create)
 
 // foods destroy
 app.del('/api/v1/foods/:id', Foods.destroy)
+
+// meals index (all meals)
+app.get('/api/v1/meals', Meals.index)
 
 if (!module.parent) {
   app.listen(app.get('port'), function() {

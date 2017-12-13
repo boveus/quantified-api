@@ -30,6 +30,9 @@ app.get('/api/v1/foods/:id', Foods.show)
 // foods create
 app.post('/api/v1/foods', Foods.create)
 
+// foods destroy
+app.del('/api/v1/foods/:id', Foods.destroy)
+
 if (!module.parent) {
   app.listen(app.get('port'), function() {
     console.log(`${app.locals.title} is running on ${app.get('port')}.`);

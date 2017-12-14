@@ -32,6 +32,9 @@ app.get('/api/v1/foods/:id', Foods.show)
 // foods create
 app.post('/api/v1/foods', Foods.create)
 
+// foods update
+app.put('/api/v1/foods/:id', Foods.edit)
+
 // foods destroy
 app.delete('/api/v1/foods/:id', Foods.destroy)
 

@@ -33,7 +33,7 @@ app.get('/api/v1/foods/:id', Foods.show)
 app.post('/api/v1/foods', Foods.create)
 
 // foods destroy
-app.del('/api/v1/foods/:id', Foods.destroy)
+app.delete('/api/v1/foods/:id', Foods.destroy)
 
 // meals index (all meals)
 app.get('/api/v1/meals', Meals.index)
@@ -43,6 +43,9 @@ app.get('/api/v1/meals/:meal_id/foods', MealFoods.index)
 
 // meal foods create (add a food to a meal)
 app.post('/api/v1/meals/:meal_id/foods/:id', MealFoods.create)
+
+// meal foods destroy (remove food from a meal)
+app.delete('/api/v1/meals/:meal_id/foods/:id', MealFoods.destroy)
 
 if (!module.parent) {
   app.listen(app.get('port'), function() {

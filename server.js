@@ -8,7 +8,7 @@ const MealFoods = require('./lib/controllers/meal-foods')
 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
+  res.header("Access-Control-Allow-Methods", "GET, PUT, PATCH, POST, DELETE");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
   next();
 });
@@ -34,7 +34,7 @@ app.get('/api/v1/foods/:id', Foods.show)
 app.post('/api/v1/foods', Foods.create)
 
 // foods update
-app.put('/api/v1/foods/:id', Foods.edit)
+app.patch('/api/v1/foods/:id', Foods.edit)
 
 // foods destroy
 app.delete('/api/v1/foods/:id', Foods.destroy)

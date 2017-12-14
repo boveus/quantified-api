@@ -38,8 +38,11 @@ app.del('/api/v1/foods/:id', Foods.destroy)
 // meals index (all meals)
 app.get('/api/v1/meals', Meals.index)
 
-// meals foods
+// meal foods (a meal and all its foods)
 app.get('/api/v1/meals/:meal_id/foods', MealFoods.index)
+
+// meal foods create (add a food to a meal)
+app.post('/api/v1/meals/:meal_id/foods/:id', MealFoods.create)
 
 if (!module.parent) {
   app.listen(app.get('port'), function() {

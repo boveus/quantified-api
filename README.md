@@ -11,7 +11,7 @@ First, download and install [Node.js](https://nodejs.org/en/)
 Then do the following:
 
 ```
-git clone git@github.com:amhursh/quantified-api.git
+git clone git@github.com:boveus/quantified-api.git
 ```
 
 ```

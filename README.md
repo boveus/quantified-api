@@ -1,4 +1,4 @@
-# quantified-api
+# Quantified Api
 
 ## Introduction
 

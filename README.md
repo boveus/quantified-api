@@ -28,7 +28,7 @@ To start the server
 npm start
 ```
 
-###Food Endpoints:
+### Food Endpoints:
 
 
 GET /api/v1/foods - returns a JSON of all foods
@@ -46,7 +46,7 @@ PATCH /api/v1/foods/:id - update a single food item matching the given ID, use t
 DELETE /api/v1/foods/:id - will delete the food with the id passed in.
 
 
-###Meal Endpoints:
+### Meal Endpoints:
 
 
 GET /api/v1/meals - returns all meals with foods assigned to those meals.
@@ -69,6 +69,7 @@ This is version 1 of the Quantified API
 ## Authors
 
 [Aaron Hursh](https://github.com/amhursh)
+and
 [Brandon Stewart](https://github.com/amhursh)
 
 ## License
